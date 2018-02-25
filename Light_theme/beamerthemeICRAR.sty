@@ -27,11 +27,11 @@
 	\setbeamercolor{institute}{fg=ICRAR_gray}		%institute color
 	\setbeamercolor{date}{fg=black}		%date color
 	
-	\setbeamercolor{normal text}{fg = ICRAR_gray}	%text color
+	\setbeamercolor{normal text}{fg = black}	%text color
 	\setbeamercolor{frametitle}{fg=black}		%frame title color
 	\setbeamercolor{framenumber}{fg=black}		%frame number color
-	\setbeamercolor{item}{fg=ICRAR_gray}		%item color
-	\setbeamercolor{subitem}{fg=ICRAR_gray}		%subitem color
+	\setbeamercolor{item}{fg=black}		%item color
+	\setbeamercolor{subitem}{fg=black}		%subitem color
 	\setbeamercolor{text}{fg=white,bg=ICRAR_gray}		%text block color
 	\setbeamercolor{block title}{bg=ICRAR_red,fg=white}		%block title color
   \setbeamercolor{block body}{bg=ICRAR_lightgray,fg=black} %block body color
@@ -71,12 +71,12 @@
   	\setbeamertemplate{frametitle}
 	  {
 		  \begin{columns}[T]
-		    \begin{column}{0.9\textwidth}
-		      %{\vskip 5pt \hskip 4pt {\color{ICRAR_red}\insertframetitle} \par\vskip -13pt{\color{ICRAR_red}\hrulefill}} %frame title
-		      {\vskip 5pt \hskip 4pt \insertframetitle \par\vskip -13pt{\color{ICRAR_red}\hrulefill}} %frame title
-		    \end{column}
 		    \begin{column}{0.1\textwidth}
 		      \vskip -10pt \pgfuseimage{logo}
+		    \end{column}
+		    \begin{column}{0.9\textwidth}
+		      %{\vskip 5pt \hskip 4pt {\color{ICRAR_red}\insertframetitle} \par\vskip -13pt{\color{ICRAR_red}\hrulefill}} %frame title
+		      {\vskip 0pt \hskip 4pt \centering\insertframetitle \par\vskip -13pt{\color{ICRAR_red}\hrulefill}} %frame title
 		    \end{column}
 		  \end{columns}
     }
@@ -97,7 +97,7 @@
               \hfill
     		    \end{column}
 		    \begin{column}{0.1\paperwidth}
-               \hskip 15pt              
+               \hskip 15pt 
               {\color{black}\textbf{\insertframenumber}}%/\inserttotalframenumber %uncomment to set page/all page format
 		    \end{column}
 		  \end{columns}
@@ -107,24 +107,34 @@
     }
 %title page
 	\setbeamertemplate{title page}
-	{
+	{	  
+   \begin{tikzpicture}[remember picture,overlay]
+      %\node[at=(current page.center)]
+      \node[at=(current page.center)]
+      %\node[yshift=1.725cm] at (current page.south)
+      {
+        \includegraphics[width=\paperwidth,height=\paperheight]{logos/ICRAR_titlepage_background}
+      };
+    \end{tikzpicture}
+		  \begin{columns}[T]
+		    \begin{column}{0.35\paperwidth}
+            %Empty column
+    		    \end{column}
+		    \begin{column}{0.65\paperwidth}
 	  \vskip 0.03\paperwidth
     \usebeamerfont{title}\usebeamercolor[fg]{title}\MakeUppercase\inserttitle\\
     \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle
-    \vskip 0.03\paperwidth
+    \vskip 0.05\paperwidth
     \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor
     \vskip 0.01\paperwidth
     \usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute
-    \vskip 0.05\paperwidth
-    \usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate
-	  
-    \begin{tikzpicture}[remember picture,overlay]
-      %\node[at=(current page.center)]
-      \node[yshift=1.725cm] at (current page.south)
-      {
-        \includegraphics[width=\paperwidth]{logos/DINGO_long_inverted}
-      };
-    \end{tikzpicture}
+    %\vskip 0.05\paperwidth
+    \vfill
+    \vskip 0.02\paperwidth
+    \centering\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate    
+		    \end{column}
+		  \end{columns}
+
   }
 
 \mode
