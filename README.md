@@ -1,4 +1,5 @@
-# LaTeX template for presentations from ICRAR  [![license badge][license-badge]][license-link]
+# LaTeX template for presentations from ICRAR  [![license badge][license-badge]][license-link] [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
+
 [license-badge]: https://img.shields.io/packagist/l/doctrine/orm.svg
 [license-link]:  https://github.com/rstofi/ICRAR_presentation_LaTeX_template/blob/master/LICENSE
 
